@@ -1,0 +1,51 @@
+<ng-container *ngIf="loaded">
+  <div class="container">
+    <div class="months">
+      <div *ngFor="let month of months" class="month">
+        <div [ngClass]="{
+                   'grey': month.users.length >= 0 && month.users.length <= 2,
+                   'blue': month.users.length >= 2 && month.users.length <=6,
+                   'green': month.users.length >= 7 && month.users.length <=10,
+                   'red': month.users.length >= 11
+                  }" class="button">
+          <div (mouseenter)="showUsers(month)">
+            {{month.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="users">
+      <div *ngFor="let user of users" class="user">
+        <div class="user__name">{{user.firstName}} {{user.lastName}}</div>
+        <div class="user__date">{{user.dob | date:'LLLL dd, yyyy'}}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!loaded && !error">
+  <div class="loader">
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="error">
+  <div class="error">
+    <div class="error__title">Sorry, page not found...</div>
+    <div class="error__img">
+      <img src="assets/img/giphy.gif" alt="page not found">
+    </div>
+  </div>
+
+
+</ng-container>

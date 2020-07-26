@@ -1,0 +1,109 @@
+@import "../../styles"
+
+.grey
+  background-color: #bdbdbd
+  color: #ffffff
+
+.blue
+  background-color: #00b0ff
+  color: #ffffff
+
+.green
+  background-color: #00e676
+  color: #ffffff
+
+.red
+  background-color: #ff1744
+  color: #ffffff
+
+.container
+  display: flex
+  max-width: 1260px
+  margin: 0 auto
+
+.button
+  text-align: center
+  padding: 10px
+  font-size: 22px
+  margin: 5px
+  border-radius: 10px
+  cursor: pointer
+  transition: 0.2s
+
+  &:hover
+    box-shadow: inset 0 0 0 6px #546e7a
+    +sm
+      box-shadow: inset 0 0 0 3px #546e7a
+
+  +md
+    font-size: 14px
+  +sm
+    font-size: 10px
+    padding: 5px
+
+.months
+  display: flex
+  flex-wrap: wrap
+  align-self: baseline
+  padding: 0 20px
+  +md
+    padding: 0 10px
+    width: 30%
+  +sm
+    padding: 0
+
+  .month
+    width: 50%
+    font-weight: 600
+    +md
+      width: 100%
+
+
+.users
+  width: 100%
+  padding: 0 20px
+  +md
+    padding: 0 10px
+  +sm
+    padding: 0
+
+  .user
+    display: flex
+    justify-content: space-between
+    background-color: #546e7a
+    color: #ffffff
+    padding: 10px
+    margin: 10px
+    border-radius: 10px
+    font-size: 22px
+
+    &:first-child
+      margin-top: 5px
+
+    +md
+      font-size: 14px
+    +sm
+      font-size: 10px
+      padding: 5px
+
+
+.error
+  font-size: 40px
+  font-weight: bold
+  text-align: center
+  margin-top: 30px
+  +md
+    font-size: 29px
+  +sm
+    font-size: 25px
+  +ms
+    font-size: 15px
+
+  &__title
+    margin-bottom: 30px
+
+  &__img img
+    width: 100%
+    height: auto
+    max-width: 400px
+
